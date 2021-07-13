@@ -49,4 +49,20 @@ void main() {
       expect(price.roundedUp, 100);
     });
   });
+
+  group("Price calculation", () {
+
+    test('Prices should add', () {
+      final price1 = Price.fromCents(23123);
+      final price2 = Price.fromCents(932);
+      expect(price1.sum(price2).inCents, price1.inCents + price2.inCents);
+    });
+
+    test('Price should subtract', () {
+      final price1 = Price.fromCents(23123);
+      final price2 = Price.fromCents(932);
+      expect(price1.difference(price2).inCents, price1.inCents - price2.inCents);
+    });
+  });
+
 }

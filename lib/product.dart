@@ -18,15 +18,4 @@ class Product {
   Price get discountPrice => _discountPrice;
   Shop get shop => _shop;
   String get imageUrl => _imageUrl;
-
-  static Product lorem = Product(
-      "żest teber",
-      "macasz kota czy ma żebra",
-      Price.fromCents(2138),
-      Price.fromDouble(21.37),
-      Shop(
-          "kitku shop",
-          "https://www.wykop.pl/cdn/c3201142/comment_1594576802zjabnefpUayCAwGAhh6p2C.jpg",
-          "sklep z kitkami"),
-      "https://www.wykop.pl/cdn/c3201142/comment_1594576802zjabnefpUayCAwGAhh6p2C.jpg");
 }

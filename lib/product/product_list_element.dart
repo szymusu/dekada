@@ -1,4 +1,4 @@
-import 'package:dekada/page/product_details.dart';
+import 'package:dekada/product/product_details.dart';
 import 'package:dekada/product.dart';
 import 'package:flutter/material.dart';
 
