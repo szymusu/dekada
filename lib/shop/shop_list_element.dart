@@ -10,12 +10,13 @@ class ShopListElement extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      minLeadingWidth: 70,
       onTap: () {
         Navigator.of(context).push(
           MaterialPageRoute(builder: (_) => ShopDetails(shop)),
         );
       },
-      leading: Image.network(shop.logoUrl),
+      leading: Image.network(shop.image.url),
       title: Text(
         shop.name,
         style: TextStyle(

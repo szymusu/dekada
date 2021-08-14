@@ -14,12 +14,15 @@ class ShopDetails extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Image.network(shop.logoUrl),
-            Text(
-              shop.name,
-              style: TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
+            Image.network(shop.image.url),
+            Container(
+              margin: EdgeInsets.all(50),
+              child: Text(
+                shop.name,
+                style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
             Text(

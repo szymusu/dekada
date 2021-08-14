@@ -19,28 +19,26 @@ class ProductListElement extends StatelessWidget {
         child: Column(
           children: [
             Image.network(
-              product.imageUrl,
+              product.image.url,
+              width: 140,
+              height: 140,
             ),
-            Padding(
-              padding: const EdgeInsets.all(12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    product.name,
-                    style: TextStyle(
-                      fontSize: 20,
-                    ),
+            Column(
+              children: [
+                Text(
+                  product.name,
+                  style: TextStyle(
+                    fontSize: 16,
                   ),
-                  Text(
-                    product.discountPrice.asString(),
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                ),
+                Text(
+                  product.discountPrice.asString(),
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
-                ],
-              ),
+                ),
+              ],
             )
           ],
         ),

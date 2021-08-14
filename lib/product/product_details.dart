@@ -16,17 +16,19 @@ class ProductDetails extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.network(product.imageUrl),
+            Image.network(product.image.url),
             Padding(
               padding: const EdgeInsets.all(20),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
-                    product.name,
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: Text(
+                      product.name,
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   Column(
@@ -34,12 +36,12 @@ class ProductDetails extends StatelessWidget {
                       Text(
                         "${product.discountPrice.asString()} zł",
                         style: TextStyle(
-                          fontSize: 30,
+                          fontSize: 25,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text(
-                        "${product.normalPrice.asString()} zł",
+                      product.regularPrice == null ? Container() : Text(
+                        "${product.regularPrice?.asString()} zł",
                         style: TextStyle(
                           fontSize: 18,
                           decoration: TextDecoration.lineThrough,
@@ -82,7 +84,7 @@ class ProductDetails extends StatelessWidget {
                       ),
                     ),
                     Image.network(
-                      product.shop.logoUrl,
+                      product.shop.image.url,
                       height: 50,
                       width: 50,
                     )

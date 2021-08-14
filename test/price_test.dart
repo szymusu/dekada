@@ -34,6 +34,13 @@ void main() {
       expect(price.asString(delimiter), "99$delimiter"+"99");
     });
 
+    test('Price should display as string with 2 digits after delimiter', () {
+      final price = Price.fromCents(210);
+      final price2 = Price.fromCents(200);
+      expect(price.asString(), "2,10");
+      expect(price2.asString(), "2,00");
+    });
+
     test('Price should display only cents', () {
       final price = Price.fromCents(9999);
       expect(price.onlyCents, 99);
